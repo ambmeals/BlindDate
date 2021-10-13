@@ -202,7 +202,7 @@ namespace BlindDate
                 Console.WriteLine("Seriously? I am not an idiot, to get in I need your correct age. \nIt's always the answer.");
                 Console.WriteLine("Come on, how old are you really? ");
                 Console.Write("Age: ");
-                int.TryParse(Console.ReadLine(), out age):
+                int.TryParse(Console.ReadLine(), out age);
             }
 
 
