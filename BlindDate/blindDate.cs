@@ -81,8 +81,8 @@ namespace BlindDate
                 case "leave":
                     {
                         Console.ForegroundColor = ConsoleColor.Magenta;
-                        Console.WriteLine(" You tell them beets aren't your deal and hastly run out of the bar\n" +
-                            "Shaking off the smell of beets, you ocntinue your night onward.");
+                        Console.WriteLine("You tell them beets aren't your deal and hastly run out of the bar\n" +
+                            "Shaking off the smell of beets, you continue your night onward.");
                         Console.WriteLine("Press Enter to continue....");
                         Console.ReadLine();
                         second();
@@ -145,7 +145,7 @@ namespace BlindDate
             Random rnd = new Random();
             //string together random scenarios in an array to initiate a randomizer
             //this will pull a random index out of the array to get a random second statement 
-            string[] secOptions = { " You begin walking down the street. You step in some gum. You start loudly cursing.\n People ask you to stop\nYou start chasing them", " You begin walking down the street, you hear loud vibey music. ", " You begin walking down the street, you see beautiful lights in the distance. " };
+            string[] secOptions = { "You begin walking down the street. You step in some gum. You start loudly cursing.\n People ask you to stop\nYou start chasing them", "You begin walking down the street, you hear loud vibey music. ", " You begin walking down the street, you see beautiful lights in the distance. " };
             int randomNumber = rnd.Next(0, 3);
             string secText = secOptions[randomNumber];
             //this will pick a random index out of that array COOOL
