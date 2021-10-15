@@ -390,11 +390,5 @@ namespace BlindDate
             }
         }
 
-
-
-
-
-
-
     }
 }
