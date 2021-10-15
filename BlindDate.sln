@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.1622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlindDate", "BlindDate\BlindDate.csproj", "{75139042-EE35-43D7-9284-B641C30270A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blindDateLib", "blindDateLib\blindDateLib.csproj", "{0917BDB9-342D-40D4-8DC1-995D15766037}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{75139042-EE35-43D7-9284-B641C30270A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75139042-EE35-43D7-9284-B641C30270A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75139042-EE35-43D7-9284-B641C30270A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0917BDB9-342D-40D4-8DC1-995D15766037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0917BDB9-342D-40D4-8DC1-995D15766037}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0917BDB9-342D-40D4-8DC1-995D15766037}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0917BDB9-342D-40D4-8DC1-995D15766037}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

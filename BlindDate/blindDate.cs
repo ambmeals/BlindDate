@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlindDate
 {
@@ -17,12 +13,12 @@ namespace BlindDate
         public static void gameTitle()
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-           string title =
-                @"                   ____  __    ____  _  _  ____     ____    __   ____  ____ 
+            string title =
+                 @"                   ____  __    ____  _  _  ____     ____    __   ____  ____ 
                   (  _ \(  )  (_  _)( \( )(  _ \   (  _ \  /__\ (_  _)( ___)
                    ) _ < )(__  _)(_  )  (  )(_) )   )(_) )/(__)\  )(   )__) 
                   (____/(____)(____)(_)\_)(____/   (____/(__)(__)(__) (____)";
-                                                                  
+
             Console.WriteLine(title);
             Console.WriteLine("");
             Console.WriteLine("  Welcome to your blind date!");
@@ -40,15 +36,16 @@ namespace BlindDate
         {
             string choice;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("  It's your first blind date.\n" +
+            Console.WriteLine("It's your first blind date.\n" +
                 "You recieve a text from your date...\n" +
                 "'PLZ EAT B4 D8. I HAVE A SPECIAL DIET.'\n" +
                 "Strange....but I guess understandable");
             Console.WriteLine("You arrive and greet your date.\n" +
-                "They proceeed to pull a ziploc bag full of beets and eat it with a spoon.\n" +
+                "They proceeed to pull out a ziploc bag full of beets and eat it with a spoon.\n" +
                 "They offer you a spoon....");
             Console.WriteLine("What do you do? ");
-            Console.WriteLine("1. Grab the extra spoon, you love beets ");
+            Console.WriteLine("");
+            Console.WriteLine("1. Grab the extra spoon, YOU LOVE BEETS! ");
             Console.WriteLine("2. Leave, WHAT THE HECK IS WRONG WITH THEM! ");
             Console.WriteLine("3. Cry ");
             Console.WriteLine("4. Get Drunk");
@@ -62,14 +59,16 @@ namespace BlindDate
                 //you can call multiple case scenarios for the same block of code
                 case "1":
                 case "grab":
-                
+
                     {
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("You grab the extra spoon and chow down!.\n" +
                             "You can't believe how considerate your date is to share.");
                         Console.WriteLine("You think this might be the one.");
-                        Console.WriteLine("They begin to chat with you about their favorite music");
-                        Console.WriteLine("They mention the genre SKA and you quickly run out of the bar");
+                        Console.WriteLine("They begin to chat with you about their favorite music.\n" +
+                            "Who doesn't love music?");
+                        Console.WriteLine("They mention the genre SKA and you quickly run out of the bar...that is music you DO NOT love.");
+                        Console.WriteLine("");
                         Console.WriteLine("Press 'ENTER' to continue. ");
                         Console.ReadLine();
                         fifth();
@@ -83,9 +82,10 @@ namespace BlindDate
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("You tell them beets aren't your deal and hastly run out of the bar\n" +
                             "Shaking off the smell of beets, you continue your night onward.");
+                        Console.WriteLine("");
                         Console.WriteLine("Press Enter to continue....");
                         Console.ReadLine();
-                        second();
+                        fifth();
                         break;
                     }
 
@@ -96,9 +96,10 @@ namespace BlindDate
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
                         Console.WriteLine("You start to tear and cry a little...");
                         Console.WriteLine("Your date tells you that you're making them uncomfortable and asks you to please leave.\n" +
-                            "You begin to explain that beets remind you of your dead grandmother...."+
+                            "You begin to explain that beets remind you of your dead grandmother...." +
                             "\nIt's at this time you decide to leave. " +
                             "\nYou start walking outside along the sidewalk. ");
+                        Console.WriteLine("");
                         Console.WriteLine("Press Enter to continue....");
                         Console.ReadLine();
                         second();
@@ -112,6 +113,7 @@ namespace BlindDate
                         Console.WriteLine("It's three hours into your date and you're having a pretty good time!\n" +
                             "You've had so much whiskey, even the SKA your date keeps playing is sounding like a bop.\n" +
                             "You feel queezy. You can't tell if it's from the beets or the liqour.");
+                        Console.WriteLine("");
                         Console.WriteLine("Press Enter to continue....");
                         Console.ReadLine();
                         fourth();
@@ -123,6 +125,7 @@ namespace BlindDate
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("I don't understand that command....");
+                            Console.WriteLine("");
                             Console.WriteLine("Press 'Enter' to try again");
                             Console.ReadLine();
                             //call back to the first() to repeat question
@@ -145,7 +148,13 @@ namespace BlindDate
             Random rnd = new Random();
             //string together random scenarios in an array to initiate a randomizer
             //this will pull a random index out of the array to get a random second statement 
-            string[] secOptions = { "You begin walking down the street. You step in some gum. You start loudly cursing.\n People ask you to stop\nYou start chasing them", "You begin walking down the street, you hear loud vibey music. ", " You begin walking down the street, you see beautiful lights in the distance. " };
+            string[] secOptions = 
+                {"You begin walking down the street. You step in some gum. You start loudly cursing.\n " +
+                "People ask you to stop\nYou start chasing them",
+                "You begin walking down the street, you hear loud vibey music. It's such a vibe." +
+                "What could possibly be playing such bops?",
+                "You begin walking down the street, you see beautiful lights in the distance.\n" +
+                "You feel like a stright up moth. You love lamp." };
             int randomNumber = rnd.Next(0, 3);
             string secText = secOptions[randomNumber];
             //this will pick a random index out of that array COOOL
@@ -155,6 +164,7 @@ namespace BlindDate
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(secText);
             Console.WriteLine("Do you continue forward?");
+            Console.WriteLine("");
             Console.Write("Choice: yes or no ");
             //put user's choice into the secChoice variable
             secChoice = Console.ReadLine().ToLower();
@@ -167,6 +177,7 @@ namespace BlindDate
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("A meteor slams straight into the road at that exact moment, killing you instantly.");
+                Console.WriteLine("");
                 Console.WriteLine("Press 'Enter' to continue.");
                 Console.ReadLine();
                 gameOver();
@@ -176,6 +187,7 @@ namespace BlindDate
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("I don't understand that command....");
+                Console.WriteLine("");
                 Console.WriteLine("Press 'Enter' to try again");
                 Console.ReadLine();
                 //call back to the second() to repeat question
@@ -188,9 +200,12 @@ namespace BlindDate
             int age;
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("You start and you run right into a RAVE!");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("SUUURRRPPPRRRIIISSSEEE RAAAAAAVVVVVVVEEEE!");
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("There is a doorman asking for the password.");
             Console.WriteLine("You can't get in unless you're the correct 'AGE'.");
+            Console.WriteLine("");
             Console.WriteLine("AGE: ");
             //asking console to parse this string into a number
             int.TryParse(Console.ReadLine(), out age);
@@ -201,6 +216,7 @@ namespace BlindDate
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Seriously? I am not an idiot, to get in I need your correct age. \nIt's always the answer.");
                 Console.WriteLine("Come on, how old are you really? ");
+                Console.WriteLine("");
                 Console.Write("Age: ");
                 int.TryParse(Console.ReadLine(), out age);
             }
@@ -227,6 +243,7 @@ namespace BlindDate
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(fourText);
             Console.WriteLine("Do you continue forward?");
+            Console.WriteLine("");
             Console.Write("Choice: yes or no ");
             //put user's choice into the secChoice variable
             fourthChoice = Console.ReadLine().ToLower();
@@ -239,6 +256,7 @@ namespace BlindDate
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("A meteor slams straight into the road at that exact moment, killing you instantly.");
+                Console.WriteLine("");
                 Console.WriteLine("Press 'Enter' to continue.");
                 Console.ReadLine();
                 gameOver();
@@ -248,6 +266,7 @@ namespace BlindDate
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("I don't understand that command....");
+                Console.WriteLine("");
                 Console.WriteLine("Press 'Enter' to try again");
                 Console.ReadLine();
                 //call back to the second() to repeat question
@@ -256,7 +275,7 @@ namespace BlindDate
         }
 
 
-        
+
 
 
         public static void gameOver()
@@ -266,6 +285,7 @@ namespace BlindDate
             Console.WriteLine("This date did not go as expected....\n" +
                 "You can't help but wonder if your choices would have changed the outcome." +
                               "\nBetter luck next time. ");
+            Console.WriteLine("");
             Console.WriteLine("Press 'Enter' to try again");
             Console.ReadLine();
             Console.Clear();
@@ -278,6 +298,7 @@ namespace BlindDate
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("You danced the night away and decide blind dates are overrated." +
                               "\nYou can't help but wonder if your date would have been different with different choices.");
+            Console.WriteLine("");
             Console.WriteLine("\nPress 'Enter' to try again");
             Console.ReadLine();
             Console.Clear();
@@ -295,7 +316,7 @@ namespace BlindDate
             string[] fiveOptions = {"You are thinking to yourself, how could this date have gone so wrong?\n" +
                 "Lost in your thoughts, you bump into someone\n" +
                 "You strike a conversation and they invite you to join them for an evening at the circus.\n" +
-                "I mean why not? Nothing weirder could happen tonight.", "You are thinking to yourself that maybe you judged their diet harshly.\n Lost in your thoughts, you bump right into someone\n " +
+                "I mean why not? Nothing weirder could happen tonight.", "You are thinking to yourself that maybe you judged their diet harshly.\n Lost in your thoughts, you bump right into someone\n" +
                 "You apologize but they reassure you it's alright\n" +
                 "You have a nice chat and they invite you to the circus, they have an extra ticket.\n" +
                 "" };
@@ -308,6 +329,7 @@ namespace BlindDate
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(fiveText);
             Console.WriteLine("Do you continue forward?");
+            Console.WriteLine("");
             Console.Write("Choice: yes or no ");
             //put user's choice into the secChoice variable
             fiveChoice = Console.ReadLine().ToLower();
@@ -320,6 +342,7 @@ namespace BlindDate
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("A meteor slams straight into the road at that exact moment, killing you instantly.");
+                Console.WriteLine("");
                 Console.WriteLine("Press 'Enter' to continue.");
                 Console.ReadLine();
                 gameOver();
@@ -333,11 +356,11 @@ namespace BlindDate
             Random rnd = new Random();
             string[] sixOptions = {"It turns out your new 'date' loves clowns...\n" +
                     "I mean they're leaning over the railing screaming 'I LOVE YOU' directly at the clowns\n" +
-                    "Everyone around seems uncomfortable....especially the clowns...\n" + "Your new date seems to be going well.\n" +
-                    "You can't help but feel uncomfortable though, your date can't stop cheering on the clowns.\n" +
-                    "The clowns seem to enjoy it but the vibe is totally off\n" +
-                    "Your new date has officially given you the ick\n" + "Your date mentioned that they liked the circus.\n" +
-                    "How could you have known it would turn into 60 minutes chanting on the clowns?" };
+                "Everyone around seems uncomfortable....especially the clowns...\n",
+                "Your new date seems to be going well.\n" +
+                    "You can't help but feel uncomfortable though, your date can't stop cheering on the clowns.\n", "Your new date has officially given you the ick\n" + "Your date mentioned that they liked the circus.\n" +
+                    "How could you have known it would turn into 60 minutes chanting on the clowns?"};
+             
             int randomNumber = rnd.Next(0, 3);
             string sixText = sixOptions[randomNumber];
             //this will pick a random index out of that array COOOL
@@ -347,6 +370,7 @@ namespace BlindDate
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(sixText);
             Console.WriteLine("Should you leave?");
+            Console.WriteLine("");
             Console.Write("Choice: yes or no ");
             //put user's choice into the secChoice variable
             sixChoice = Console.ReadLine().ToLower();
@@ -359,6 +383,7 @@ namespace BlindDate
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("A meteor slams straight into the road at that exact moment, killing you instantly.");
+                Console.WriteLine("");
                 Console.WriteLine("Press 'Enter' to continue.");
                 Console.ReadLine();
                 gameOver();

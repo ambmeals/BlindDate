@@ -49,11 +49,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\blindDateLib\blindDateLib.csproj">
-      <Project>{0917bdb9-342d-40d4-8dc1-995d15766037}</Project>
-      <Name>blindDateLib</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
