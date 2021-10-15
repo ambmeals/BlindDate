@@ -25,9 +25,9 @@ namespace BlindDate
                                                                   
             Console.WriteLine(title);
             Console.WriteLine("");
-            Console.WriteLine("Welcome to your blind date!");
-            Console.WriteLine("Select the numerical choices given in the game");
-            Console.WriteLine("Press Enter to begin.");
+            Console.WriteLine("  Welcome to your blind date!");
+            Console.WriteLine("  Select the numerical choices given in the game");
+            Console.WriteLine("  Press Enter to begin.");
             Console.WriteLine("");
             Console.ReadLine();
             Console.Clear();
@@ -40,7 +40,7 @@ namespace BlindDate
         {
             string choice;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("It's your first blind date.\n" +
+            Console.WriteLine("  It's your first blind date.\n" +
                 "You recieve a text from your date...\n" +
                 "'PLZ EAT B4 D8. I HAVE A SPECIAL DIET.'\n" +
                 "Strange....but I guess understandable");
@@ -52,7 +52,7 @@ namespace BlindDate
             Console.WriteLine("2. Leave, WHAT THE HECK IS WRONG WITH THEM! ");
             Console.WriteLine("3. Cry ");
             Console.WriteLine("4. Get Drunk");
-            Console.Write("Choice: 1 - 3 ");
+            Console.Write("Choice: 1 - 4 ");
             //ToLower () makes user input into lowercase
             choice = Console.ReadLine().ToLower();
             Console.Clear();
@@ -72,7 +72,7 @@ namespace BlindDate
                         Console.WriteLine("They mention the genre SKA and you quickly run out of the bar");
                         Console.WriteLine("Press 'ENTER' to continue. ");
                         Console.ReadLine();
-                        gameOver();
+                        fifth();
                         break;
                     }
 
@@ -187,7 +187,7 @@ namespace BlindDate
         {
             int age;
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("You start running towards what you see and you run right into a RAVE!");
+            Console.WriteLine("You start and you run right into a RAVE!");
             Console.WriteLine("SUUURRRPPPRRRIIISSSEEE RAAAAAAVVVVVVVEEEE!");
             Console.WriteLine("There is a doorman asking for the password.");
             Console.WriteLine("You can't get in unless you're the correct 'AGE'.");
@@ -256,6 +256,9 @@ namespace BlindDate
         }
 
 
+        
+
+
         public static void gameOver()
         {
             Console.Clear();
@@ -281,6 +284,88 @@ namespace BlindDate
             gameTitle();
 
         }
+
+
+
+        public static void fifth()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Random rnd = new Random();
+            string[] fiveOptions = {"You are thinking to yourself, how could this date have gone so wrong?\n" +
+                "Lost in your thoughts, you bump into someone\n" +
+                "You strike a conversation and they invite you to join them for an evening at the circus.\n" +
+                "I mean why not? Nothing weirder could happen tonight.", "You are thinking to yourself that maybe you judged their diet harshly.\n Lost in your thoughts, you bump right into someone\n " +
+                "You apologize but they reassure you it's alright\n" +
+                "You have a nice chat and they invite you to the circus, they have an extra ticket.\n" +
+                "" };
+            int randomNumber = rnd.Next(0, 3);
+            string fiveText = fiveOptions[randomNumber];
+            //this will pick a random index out of that array COOOL
+
+            string fiveChoice;
+            //outputting the secText variable 
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(fiveText);
+            Console.WriteLine("Do you continue forward?");
+            Console.Write("Choice: yes or no ");
+            //put user's choice into the secChoice variable
+            fiveChoice = Console.ReadLine().ToLower();
+
+            if (fiveChoice == "yes" || fiveChoice == "y")
+            {
+                six();
+            }
+            else if (fiveChoice == "no" || fiveChoice == "n")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("A meteor slams straight into the road at that exact moment, killing you instantly.");
+                Console.WriteLine("Press 'Enter' to continue.");
+                Console.ReadLine();
+                gameOver();
+            }
+        }
+
+        public static void six()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Random rnd = new Random();
+            string[] sixOptions = {"It turns out your new 'date' loves clowns...\n" +
+                    "I mean they're leaning over the railing screaming 'I LOVE YOU' directly at the clowns\n" +
+                    "Everyone around seems uncomfortable....especially the clowns...\n" + "Your new date seems to be going well.\n" +
+                    "You can't help but feel uncomfortable though, your date can't stop cheering on the clowns.\n" +
+                    "The clowns seem to enjoy it but the vibe is totally off\n" +
+                    "Your new date has officially given you the ick\n" + "Your date mentioned that they liked the circus.\n" +
+                    "How could you have known it would turn into 60 minutes chanting on the clowns?" };
+            int randomNumber = rnd.Next(0, 3);
+            string sixText = sixOptions[randomNumber];
+            //this will pick a random index out of that array COOOL
+
+            string sixChoice;
+            //outputting the secText variable 
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(sixText);
+            Console.WriteLine("Should you leave?");
+            Console.Write("Choice: yes or no ");
+            //put user's choice into the secChoice variable
+            sixChoice = Console.ReadLine().ToLower();
+
+            if (sixChoice == "yes" || sixChoice == "y")
+            {
+                second();
+            }
+            else if (sixChoice == "no" || sixChoice == "n")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("A meteor slams straight into the road at that exact moment, killing you instantly.");
+                Console.WriteLine("Press 'Enter' to continue.");
+                Console.ReadLine();
+                gameOver();
+            }
+        }
+
+
 
 
 

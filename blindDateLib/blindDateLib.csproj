@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75139042-EE35-43D7-9284-B641C30270A9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>BlindDate</RootNamespace>
-    <AssemblyName>BlindDate</AssemblyName>
+    <ProjectGuid>{0917BDB9-342D-40D4-8DC1-995D15766037}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>blindDateLib</RootNamespace>
+    <AssemblyName>blindDateLib</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,17 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="blindDate.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\blindDateLib\blindDateLib.csproj">
-      <Project>{0917bdb9-342d-40d4-8dc1-995d15766037}</Project>
-      <Name>blindDateLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
