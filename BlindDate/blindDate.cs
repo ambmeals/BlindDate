@@ -21,9 +21,9 @@ namespace BlindDate
 
             Print(title, 10);
             Console.WriteLine("");
-            Print("  Welcome to your blind date!", 10);
-            Print("  Select the numerical choices given in the game", 10);
-            Print("  Press Enter to begin.", 10);
+            Console.WriteLine("  Welcome to your blind date!");
+            Console.WriteLine("  Select the numerical choices given in the game");
+            Console.WriteLine("  Press Enter to begin.");
             Console.WriteLine("");
             Console.ReadLine();
             Console.Clear();
@@ -46,7 +46,7 @@ namespace BlindDate
             Print("What do you do? ", 30);
             Console.WriteLine("");
             Print("1. Grab the extra spoon. YOU LOVE BEETS! ", 30);
-            Print("2. Leave, WHAT THE HECK IS WRONG WITH THEM! ", 30);
+            Print("2. LEAVE NOW!!! WHAT IS WRONG WITH THEM! ", 30);
             Print("3. Cry ", 30);
             Print("4. Get Drunk", 30);
             Print("Choice: 1 - 4 ", 30);
