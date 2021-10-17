@@ -1,56 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 
-namespace BlindDate
+namespace DateLibrary
 {
-    public class blindDate
+    public class GoodDate
     {
-        static void Main(string[] args)
-        {
-            gameTitle();
-
-        }
-
-        public static void gameTitle()
-        {
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            string title =
-                 @"                   ____  __    ____  _  _  ____     ____    __   ____  ____ 
-                  (  _ \(  )  (_  _)( \( )(  _ \   (  _ \  /__\ (_  _)( ___)
-                   ) _ < )(__  _)(_  )  (  )(_) )   )(_) )/(__)\  )(   )__) 
-                  (____/(____)(____)(_)\_)(____/   (____/(__)(__)(__) (____)";
-
-            Print(title, 10);
-            Console.WriteLine("");
-            Console.WriteLine("  Welcome to your blind date!");
-            Console.WriteLine("  Select the numerical choices given in the game");
-            Console.WriteLine("  Press Enter to begin.");
-            Console.WriteLine("");
-            Console.ReadLine();
-            Console.Clear();
-            first();
-        }
-
-
-
-        public static void first()
+        public static void firstEnding()
         {
             string choice;
             Console.ForegroundColor = ConsoleColor.Green;
-            Print("It's your first blind date.\n" +
-                "You recieve a text from your date...\n" +
-                "'PLZ EAT B4 D8. I HAVE A SPECIAL DIET.'\n" +
-                "Strange....but I guess understandable", 30);
-           Print("You arrive and greet your date.\n" +
-                "They proceeed to pull out a ziploc bag full of beets and eat it with a spoon.\n" +
-                "They offer you a spoon....", 30);
-            Print("What do you do? ", 30);
+            Print("You're glad you stayed.\n" +
+                "Your date goes on about this great new ice cream place\n" +
+                "The only place in town with beet flavor.\n" +
+                "Do you join them?", 30);
             Console.WriteLine("");
-            Print("1. Grab the extra spoon. YOU LOVE BEETS! ", 30);
-            Print("2. LEAVE NOW!!! WHAT IS WRONG WITH THEM! ", 30);
-            Print("3. Cry ", 30);
-            Print("4. Get Drunk", 30);
-            Print("Choice: 1 - 4 ", 30);
+            Print("1. Yes, this date has been great so far! ", 30);
+            Print("2. You are kind of tired and need some rest.", 30);
+            Print("3. You don't see this going further than a shared bag of beets.", 30);
+            Print("Choice: 1 - 3 ", 30);
             //ToLower () makes user input into lowercase
             choice = Console.ReadLine().ToLower();
             Console.Clear();
@@ -59,7 +30,7 @@ namespace BlindDate
             {
                 //you can call multiple case scenarios for the same block of code
                 case "1":
-                case "grab":
+                case "yes":
 
                     {
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -73,7 +44,7 @@ namespace BlindDate
                         Console.WriteLine("");
                         Print("Press 'ENTER' to continue. ", 30);
                         Console.ReadLine();
-                        fifth();
+                        happyEnding();
                         break;
                     }
 
@@ -93,7 +64,7 @@ namespace BlindDate
 
 
                 case "3":
-                case "cry":
+                case "don't go forward":
                     {
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
                         Print("You start to tear and cry a little...", 30);
@@ -150,7 +121,7 @@ namespace BlindDate
             Random rnd = new Random();
             //string together random scenarios in an array to initiate a randomizer
             //this will pull a random index out of the array to get a random second statement 
-            string[] secOptions = 
+            string[] secOptions =
                 {"You begin walking down the street. You step in some gum. You start loudly cursing.\n " +
                 "People ask you to stop\nYou start chasing them",
                 "You begin walking down the street, you hear loud vibey music. It's such a vibe." +
@@ -199,9 +170,9 @@ namespace BlindDate
         }
         public static void third()
         {
-            int age;
+            int year;
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Print("You start and you run right into a RAVE!", 30);
+            Print("Your date and you have gotten along\n!", 30);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Print("SUUURRRPPPRRRIIISSSEEE RAAAAAAVVVVVVVEEEE!", 30);
             Console.ForegroundColor = ConsoleColor.Red;
@@ -210,10 +181,10 @@ namespace BlindDate
             Console.WriteLine("");
             Print("AGE: ", 30);
             //asking console to parse this string into a number
-            int.TryParse(Console.ReadLine(), out age);
+            int.TryParse(Console.ReadLine(), out year);
 
             //this while loop will continue to loop until user guesses 42
-            while (age < 42)
+            while (year < 100)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Print("Seriously? I am not an idiot, to get in I need your correct age. \nIt's always the answer.", 30);
@@ -280,7 +251,7 @@ namespace BlindDate
 
 
 
-        public static void gameOver()
+        public static void happyEnding()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -291,7 +262,7 @@ namespace BlindDate
             Print("Press 'Enter' to try again", 30);
             Console.ReadLine();
             Console.Clear();
-            gameTitle();
+            happyEnding();
         }
 
         public static void youWin()
@@ -305,93 +276,6 @@ namespace BlindDate
             Console.ReadLine();
             Console.Clear();
             gameTitle();
-
-        }
-
-
-
-        public static void fifth()
-        {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Random rnd = new Random();
-            string[] fiveOptions = {"You are thinking to yourself, how could this date have gone so wrong?\n" +
-                "Lost in your thoughts, you bump into someone\n" +
-                "You strike a conversation and they invite you to join them for an evening at the circus.\n" +
-                "I mean why not? Nothing weirder could happen tonight.", "You are thinking to yourself that maybe you judged their diet harshly.\n Lost in your thoughts, you bump right into someone\n" +
-                "You apologize but they reassure you it's alright\n" +
-                "You have a nice chat and they invite you to the circus, they have an extra ticket.\n" +
-                "" };
-            int randomNumber = rnd.Next(0, 3);
-            string fiveText = fiveOptions[randomNumber];
-            //this will pick a random index out of that array COOOL
-
-            string fiveChoice;
-            //outputting the secText variable 
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Print(fiveText, 30);
-            Print("Do you continue forward?", 30);
-            Console.WriteLine("");
-            Print("Choice: yes or no ", 30);
-            //put user's choice into the secChoice variable
-            fiveChoice = Console.ReadLine().ToLower();
-
-            if (fiveChoice == "yes" || fiveChoice == "y")
-            {
-                six();
-            }
-            else if (fiveChoice == "no" || fiveChoice == "n")
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Print("A meteor slams straight into the road at that exact moment, killing you instantly.", 30);
-                Console.WriteLine("");
-                Print("Press 'Enter' to continue.", 30);
-                Console.ReadLine();
-                gameOver();
-            }
-        }
-
-        public static void six()
-        {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Random rnd = new Random();
-            string[] sixOptions = {"It turns out your new 'date' loves clowns...\n" +
-                    "I mean they're leaning over the railing screaming 'I LOVE YOU' directly at the clowns\n" +
-                "Everyone around seems uncomfortable....especially the clowns...\n",
-                "Your new date seems to be going well.\n" +
-                "You can't help but feel uncomfortable though...\n Your date won't stop cheering on the clowns.\n",
-                "Your new date has officially given you the 'ICK'\n" + "Your date mentioned that they liked the circus...\n" +
-                "How could you have known it would turn into 60 min of chanting on ONLY the clowns?"};
-             
-            int randomNumber = rnd.Next(0, 3);
-            string sixText = sixOptions[randomNumber];
-            //this will pick a random index out of that array COOOL
-
-            string sixChoice;
-            //outputting the secText variable 
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Print(sixText, 30);
-            Print("Should you leave?", 30);
-            Console.WriteLine("");
-            Print("Choice: yes or no ", 30);
-            //put user's choice into the secChoice variable
-            sixChoice = Console.ReadLine().ToLower();
-
-            if (sixChoice == "yes" || sixChoice == "y")
-            {
-                second();
-            }
-            else if (sixChoice == "no" || sixChoice == "n")
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Print("A meteor slams straight into the road at that exact moment, killing you instantly.", 30);
-                Console.WriteLine("");
-                Print("Press 'Enter' to continue.", 30);
-                Console.ReadLine();
-                gameOver();
-            }
-
 
         }
 
