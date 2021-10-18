@@ -235,7 +235,17 @@ namespace BlindDate
             Random rnd = new Random();
             //string together random scenarios in an array to initiate a randomizer
             //this will pull a random index out of the array to get a random second statement 
-            string[] fourOptions = { "You vomit in the toilet at the bar.\nEmbaressed, you run out of the bar.", "You vomit on your date at the bar\nEmbaressed, you run out of the bar.", "You vomit on the floor at the bar. \nEmbaressed, you run out of the bar." };
+            string[] fourOptions = 
+                { "You dance rodeo style on the bar counter\n" + //1
+                    "Everyone is loving it...you think.\n" +
+                    "You fall off the bar, chip your tooth, and now all your words sound like whistles.\nEmbaressed, you run out of the bar.",
+                    "You vomit on your date at the bar\n" + //2
+                    "Though, this should have been a deal breaker, he says he prefers his food 'bird style'...\n" +
+                    "That is a NO GO for you. You run out of the bar",
+                    "You vomit on the floor at the bar. \n" + //3
+                    "The server was not paying attention and walked right into it.\n" +
+                    "She slips and falls....oh no...." +
+                    "\nEmbaressed, you run out of the bar." };
             int randomNumber = rnd.Next(0, 3);
             string fourText = fourOptions[randomNumber];
             //this will pick a random index out of that array COOOL
