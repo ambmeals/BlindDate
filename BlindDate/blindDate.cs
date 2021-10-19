@@ -4,7 +4,9 @@
 namespace BlindDate
 {
     public class blindDate
+
     {
+
         static void Main(string[] args)
         {
             gameTitle();
@@ -13,6 +15,7 @@ namespace BlindDate
 
         public static void gameTitle()
         {
+            Console.Title = " Your Blind Date ";
             Console.ForegroundColor = ConsoleColor.DarkRed;
             string title =
                  @"                   ____  __    ____  _  _  ____     ____    __   ____  ____ 
@@ -20,7 +23,7 @@ namespace BlindDate
                    ) _ < )(__  _)(_  )  (  )(_) )   )(_) )/(__)\  )(   )__) 
                   (____/(____)(____)(_)\_)(____/   (____/(__)(__)(__) (____)";
 
-            Print(title, 10);
+            Print(title, 2);
             Console.WriteLine("");
             Console.WriteLine("  Welcome to your blind date!");
             Console.WriteLine("  Select the numerical choices given in the game");
@@ -40,17 +43,17 @@ namespace BlindDate
             Print("It's your first blind date.\n" +
                 "You recieve a text from your date...\n" +
                 "'PLZ EAT B4 D8. I HAVE A SPECIAL DIET.'\n" +
-                "Strange....but I guess understandable", 30);
+                "Strange....but I guess understandable", 10);
            Print("You arrive and greet your date.\n" +
                 "They proceeed to pull out a ziploc bag full of beets and eat it with a spoon.\n" +
-                "They offer you a spoon....", 30);
-            Print("What do you do? ", 30);
+                "They offer you a spoon....", 10);
+            Print("What do you do? ", 10);
             Console.WriteLine("");
-            Print("1. Grab the extra spoon. YOU LOVE BEETS! ", 30);
-            Print("2. LEAVE NOW!!! WHAT IS WRONG WITH THEM! ", 30);
-            Print("3. Cry ", 30);
-            Print("4. Get Drunk", 30);
-            Print("Choice: 1 - 4 ", 30);
+            Print("1. Grab the extra spoon. YOU LOVE BEETS! ", 10);
+            Print("2. LEAVE NOW!!! WHAT IS WRONG WITH THEM! ", 10);
+            Print("3. Cry ", 10);
+            Print("4. Get Drunk", 10);
+            Print("Choice: 1 - 4 ", 10);
             //ToLower () makes user input into lowercase
             choice = Console.ReadLine().ToLower();
             Console.Clear();
@@ -64,14 +67,14 @@ namespace BlindDate
                     {
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Print("You grab the extra spoon and chow down!\n" +
-                            "You can't believe how considerate your date is to share.", 30);
-                        Print("You think this might be the one.", 30);
+                            "You can't believe how considerate your date is to share.", 10);
+                        Print("You think this might be the one.", 10);
                         Print("They begin to chat with you about their favorite music.\n" +
-                            "Who doesn't love music?", 30);
+                            "Who doesn't love music?", 10);
                         Print("They mention they love SKA and are a Sound Cloud rapper. \n" +
-                            "Horrified, you quickly run out of the bar...", 30);
+                            "Horrified, you quickly run out of the bar...", 10);
                         Console.WriteLine("");
-                        Print("Press 'ENTER' to continue. ", 30);
+                        Print("Press 'ENTER' to continue. ", 10);
                         Console.ReadLine();
                         fifth();
                         break;
@@ -83,9 +86,9 @@ namespace BlindDate
                     {
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Print("You tell them beets aren't your deal and hastly run out of the bar\n" +
-                            "Shaking off the smell of beets, you continue your night onward.", 30);
+                            "Shaking off the smell of beets, you continue your night onward.", 10);
                         Console.WriteLine("");
-                        Print("Press Enter to continue....", 30);
+                        Print("Press Enter to continue....", 10);
                         Console.ReadLine();
                         fifth();
                         break;
@@ -96,13 +99,13 @@ namespace BlindDate
                 case "cry":
                     {
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
-                        Print("You start to tear and cry a little...", 30);
+                        Print("You start to tear and cry a little...", 10);
                         Print("Your date tells you that you're making them uncomfortable and asks you to please leave.\n" +
                             "You begin to explain that beets remind you of your dead grandmother...." +
                             "\nIt's at this time you decide to leave. " +
-                            "\nYou start walking outside along the sidewalk.", 30);
+                            "\nYou start walking outside along the sidewalk.", 10);
                         Console.WriteLine("");
-                        Print("Press Enter to continue....", 30);
+                        Print("Press Enter to continue....", 10);
                         Console.ReadLine();
                         second();
                         break;
@@ -111,12 +114,12 @@ namespace BlindDate
                 case "ask":
                     {
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
-                        Print("You tell the bartender to keep them coming", 30);
+                        Print("You tell the bartender to keep them coming", 10);
                         Print("It's three hours into your date and you're having a pretty good time!\n" +
                             "You've had so much whiskey, even the SKA your date keeps playing is sounding like a bop.\n" +
-                            "You feel queezy. You can't tell if it's from the beets or the liqour.", 30);
+                            "You feel queezy. You can't tell if it's from the beets or the liqour.", 10);
                         Console.WriteLine("");
-                        Print("Press Enter to continue....", 30);
+                        Print("Press Enter to continue....", 10);
                         Console.ReadLine();
                         fourth();
                         break;
@@ -126,9 +129,9 @@ namespace BlindDate
 
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Print("I don't understand that command....", 30);
+                            Print("I don't understand that command....", 10);
                             Console.WriteLine("");
-                            Print("Press 'Enter' to try again", 30);
+                            Print("Press 'Enter' to try again", 10);
                             Console.ReadLine();
                             //call back to the first() to repeat question
                             first();
@@ -165,9 +168,9 @@ namespace BlindDate
             //outputting the secText variable 
             Console.ForegroundColor = ConsoleColor.Blue;
             Print(secText, 30);
-            Print("Do you continue forward?", 30);
+            Print("Do you continue forward?", 10);
             Console.WriteLine("");
-            Print("Choice: yes or no", 30);
+            Print("Choice: yes or no", 10);
             //put user's choice into the secChoice variable
             secChoice = Console.ReadLine().ToLower();
 
@@ -178,9 +181,9 @@ namespace BlindDate
             else if (secChoice == "no" || secChoice == "n")
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Print("A meteor slams straight into the road at that exact moment, killing you instantly.", 30);
+                Print("A meteor slams straight into the road at that exact moment, killing you instantly.", 10);
                 Console.WriteLine("");
-                Print("Press 'Enter' to continue.", 30);
+                Print("Press 'Enter' to continue.", 10);
                 Console.ReadLine();
                 gameOver();
             }
@@ -188,9 +191,9 @@ namespace BlindDate
             else
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Print("I don't understand that command....", 30);
+                Print("I don't understand that command....", 10);
                 Console.WriteLine("");
-                Print("Press 'Enter' to try again", 30);
+                Print("Press 'Enter' to try again", 10);
                 Console.ReadLine();
                 //call back to the second() to repeat question
                 second();
@@ -201,12 +204,12 @@ namespace BlindDate
         {
             int age;
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Print("You start and you run right into a RAVE!", 30);
+            Print("You start and you run right into a RAVE!", 10);
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Print("SUUURRRPPPRRRIIISSSEEE RAAAAAAVVVVVVVEEEE!", 30);
+            Print("SUUURRRPPPRRRIIISSSEEE RAAAAAAVVVVVVVEEEE!", 10);
             Console.ForegroundColor = ConsoleColor.Red;
-            Print("There is a doorman asking for the password.", 30);
-            Print("You can't get in unless you're the correct 'AGE'.", 30);
+            Print("There is a doorman asking for the password.", 10);
+            Print("You can't get in unless you're the correct 'AGE'.", 10);
             Console.WriteLine("");
             Print("AGE: ", 30);
             //asking console to parse this string into a number
@@ -217,15 +220,15 @@ namespace BlindDate
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Print("Seriously? I am not an idiot, to get in I need your correct age. \nIt's always the answer.", 30);
-                Print("Come on, how old are you really? ", 30);
+                Print("Come on, how old are you really? ", 10);
                 Console.WriteLine("");
-                Print("Age: ", 30);
+                Print("Age: ", 10);
                 int.TryParse(Console.ReadLine(), out age);
             }
 
 
 
-            Print("Wow, that wasn't so hard. You ready to dance?", 30);
+            Print("Wow, that wasn't so hard. You ready to dance?", 10);
             youWin();
         }
 
@@ -236,13 +239,13 @@ namespace BlindDate
             //string together random scenarios in an array to initiate a randomizer
             //this will pull a random index out of the array to get a random second statement 
             string[] fourOptions = 
-                { "You dance rodeo style on the bar counter\n" + //1
+                { "You dance rodeo style on the bar counter\n" + 
                     "Everyone is loving it...you think.\n" +
                     "You fall off the bar, chip your tooth, and now all your words sound like whistles.\nEmbaressed, you run out of the bar.",
-                    "You vomit on your date at the bar\n" + //2
+                    "You vomit on your date at the bar\n" + 
                     "Though, this should have been a deal breaker, he says he prefers his food 'bird style'...\n" +
                     "That is a NO GO for you. You run out of the bar",
-                    "You vomit on the floor at the bar. \n" + //3
+                    "You vomit on the floor at the bar. \n" + 
                     "The server was not paying attention and walked right into it.\n" +
                     "She slips and falls....oh no...." +
                     "\nEmbaressed, you run out of the bar." };
@@ -253,10 +256,10 @@ namespace BlindDate
             string fourthChoice;
             //outputting the secText variable 
             Console.ForegroundColor = ConsoleColor.Blue;
-            Print(fourText, 30);
-            Print("Do you continue forward?", 30);
+            Print(fourText, 10);
+            Print("Do you continue forward?", 10);
             Console.WriteLine("");
-            Print("Choice: yes or no ", 30);
+            Print("Choice: yes or no ", 10);
             //put user's choice into the secChoice variable
             fourthChoice = Console.ReadLine().ToLower();
 
@@ -267,9 +270,9 @@ namespace BlindDate
             else if (fourthChoice == "no" || fourthChoice == "n")
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Print("A meteor slams straight into the road at that exact moment, killing you instantly.", 30);
+                Print("A meteor slams straight into the road at that exact moment, killing you instantly.", 10);
                 Console.WriteLine("");
-                Print("Press 'Enter' to continue.", 30);
+                Print("Press 'Enter' to continue.", 10);
                 Console.ReadLine();
                 gameOver();
             }
@@ -277,9 +280,9 @@ namespace BlindDate
             else
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Print("I don't understand that command....", 30);
+                Print("I don't understand that command....", 10);
                 Console.WriteLine("");
-                Print("Press 'Enter' to try again", 30);
+                Print("Press 'Enter' to try again", 10);
                 Console.ReadLine();
                 //call back to the second() to repeat question
                 second();
@@ -296,9 +299,9 @@ namespace BlindDate
             Console.ForegroundColor = ConsoleColor.Blue;
             Print("This date did not go as expected....\n" +
                 "You can't help but wonder if your choices would have changed the outcome." +
-                              "\nBetter luck next time. ", 30);
+                              "\nBetter luck next time. ", 10);
             Console.WriteLine("");
-            Print("Press 'Enter' to try again", 30);
+            Print("Press 'Enter' to try again", 10);
             Console.ReadLine();
             Console.Clear();
             gameTitle();
@@ -311,7 +314,7 @@ namespace BlindDate
             Print("You danced the night away and decide blind dates are overrated." +
                               "\nYou can't help but wonder if your date would have been different with different choices.", 30);
             Console.WriteLine("");
-            Print("\nPress 'Enter' to try again", 30);
+            Print("\nPress 'Enter' to try again", 10);
             Console.ReadLine();
             Console.Clear();
             gameTitle();
@@ -331,18 +334,19 @@ namespace BlindDate
                 "I mean why not? Nothing weirder could happen tonight.", "You are thinking to yourself that maybe you judged their diet harshly.\n Lost in your thoughts, you bump right into someone\n" +
                 "You apologize but they reassure you it's alright\n" +
                 "You have a nice chat and they invite you to the circus, they have an extra ticket.\n" +
-                "" };
-            int randomNumber = rnd.Next(0, 3);
+                "Sounds like a good night.", 
+                 };
+            int randomNumber = rnd.Next(0, 2);
             string fiveText = fiveOptions[randomNumber];
             //this will pick a random index out of that array COOOL
 
             string fiveChoice;
             //outputting the secText variable 
             Console.ForegroundColor = ConsoleColor.Blue;
-            Print(fiveText, 30);
-            Print("Do you continue forward?", 30);
+            Print(fiveText, 10);
+            Print("Do you continue forward?", 10);
             Console.WriteLine("");
-            Print("Choice: yes or no ", 30);
+            Print("Choice: yes or no ", 10);
             //put user's choice into the secChoice variable
             fiveChoice = Console.ReadLine().ToLower();
 
@@ -381,10 +385,10 @@ namespace BlindDate
             string sixChoice;
             //outputting the secText variable 
             Console.ForegroundColor = ConsoleColor.Blue;
-            Print(sixText, 30);
-            Print("Should you leave?", 30);
+            Print(sixText, 10);
+            Print("Should you leave?", 10);
             Console.WriteLine("");
-            Print("Choice: yes or no ", 30);
+            Print("Choice: yes or no ", 10);
             //put user's choice into the secChoice variable
             sixChoice = Console.ReadLine().ToLower();
 
@@ -395,9 +399,9 @@ namespace BlindDate
             else if (sixChoice == "no" || sixChoice == "n")
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Print("A meteor slams straight into the road at that exact moment, killing you instantly.", 30);
+                Print("A meteor slams straight into the road at that exact moment, killing you instantly.", 20);
                 Console.WriteLine("");
-                Print("Press 'Enter' to continue.", 30);
+                Print("Press 'Enter' to continue.", 10);
                 Console.ReadLine();
                 gameOver();
             }
