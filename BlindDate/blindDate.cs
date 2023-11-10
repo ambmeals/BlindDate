@@ -90,6 +90,34 @@ namespace BlindDate
             SecondEncounter();
         }
 
+        private static void SecondEncounter()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            DisplayTextWithBlankLine("Suddenly, a small, well-dressed squirrel hops onto the table.");
+            DisplayTextWithBlankLine("It's holding a tiny microphone and starts to sing opera!");
+            DisplayTextWithBlankLine("Your date applauds, and the squirrel takes a graceful bow.");
+            DisplayTextWithBlankLine("Amidst the laughter, your date reveals they're a part-time squirrel trainer.");
+            DisplayTextWithBlankLine("They invite you to a squirrel training session next weekend.");
+            DisplayTextWithBlankLine("You never knew squirrels could be so talented!");
+            PromptContinue();
+            ThirdEncounter();
+        }
+
+        private static void ThirdEncounter()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            DisplayTextWithBlankLine("As you're walking in the park, you spot a group of ducks wearing tiny hats.");
+            DisplayTextWithBlankLine("Your date explains that these are no ordinary ducks - they're part of an elite duck jazz band!");
+            DisplayTextWithBlankLine("Out of nowhere, a mini stage appears and the ducks waddle onto it, instruments in tow.");
+            DisplayTextWithBlankLine("They start performing a jazzy rendition of 'Quack the Halls'.");
+            DisplayTextWithBlankLine("People gather around, tapping their feet to the ducks' surprisingly catchy tune.");
+            DisplayTextWithBlankLine("You and your date join in, dancing along to the duck jazz band's performance.");
+            DisplayTextWithBlankLine("As the song ends, the ducks take a bow, and everyone cheers.");
+            DisplayTextWithBlankLine("Your date whispers that next week, they're taking you to see a cat choir.");
+            PromptContinue();
+            SurpriseEnding();
+        }
+
         private static void ExitBar()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -105,11 +133,12 @@ namespace BlindDate
         private static void CryAtDate()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
-            DisplayTextWithBlankLine("You can't hold back the tears. This was a bad idea.");
-            DisplayTextWithBlankLine("Your date arrives and sees you crying. They decide to sit down and comfort you.");
-            DisplayTextWithBlankLine("Turns out they have a good sense of humor about the whole situation.");
-            PromptContinue();
-            ThirdEncounter();
+            DisplayTextWithBlankLine("The sight of your date eating beets straight from a ziploc bag overwhelms you.");
+            DisplayTextWithBlankLine("Tears start to well up in your eyes. This is not how you imagined your blind date.");
+            DisplayTextWithBlankLine("Your date notices your discomfort and awkwardly offers you a napkin instead of a spoon.");
+            DisplayTextWithBlankLine("Trying to compose yourself, you realize this might just be too bizarre for you.");
+
+            GameOver("Sometimes, the heart just knows when it's not the right match. Maybe next time, hold the beets.");
         }
 
         private static void GetDrunk()
@@ -122,22 +151,31 @@ namespace BlindDate
             GameOver("Well, that escalated quickly. Better luck next time!");
         }
 
-        private static void SecondEncounter()
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void ThirdEncounter()
-        {
-            throw new NotImplementedException();
-        }
-
         private static void RepeatFirstEncounter()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("I don't understand that command....");
             PromptTryAgain();
             FirstEncounter();
+        }
+
+        private static void SurpriseEnding()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            DisplayTextWithBlankLine("As the night winds down, you reflect on the unexpected adventures.");
+            DisplayTextWithBlankLine("How were you unaware of animal performers???");
+            DisplayTextWithBlankLine("You both agree to meet again for more quirky fun.");
+            PromptContinue();
+            EndGame();
+        }
+
+        private static void EndGame()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Thanks for playing! Hope you enjoyed your blind date adventure.");
+            Console.WriteLine("\nPress 'Enter' to exit.");
+            Console.ReadLine();
+            Environment.Exit(0);
         }
 
         private static void PromptTryAgain()
@@ -156,10 +194,24 @@ namespace BlindDate
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(message);
-            Console.WriteLine("\nGAME OVER");
-            Console.WriteLine("\nPress 'Enter' to exit.");
-            Console.ReadLine();
-            Environment.Exit(0);
+            DisplayTextWithBlankLine("Your blind date adventure comes to a quirky end.");
+            DisplayTextWithBlankLine("Each choice leads to a new, unexpected twist. Isn't life just like that?");
+
+            Console.WriteLine("\nWould you like to try again? (yes/no)");
+            string choice = Console.ReadLine()?.ToLower();
+
+            if (choice == "yes")
+            {
+                Console.Clear();
+                FirstEncounter();
+            }
+            else
+            {
+                Console.WriteLine("\nGoodbye! Press 'Enter' to exit.");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
         }
+
     }
 }
