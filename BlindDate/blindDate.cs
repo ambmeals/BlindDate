@@ -188,6 +188,7 @@ namespace BlindDate
         {
             Console.WriteLine("Press 'ENTER' to continue.");
             Console.ReadLine();
+            Console.Clear();
         }
 
         private static void GameOver(string message)
